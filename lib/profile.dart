@@ -25,8 +25,12 @@ class Profilecard extends StatelessWidget {
             ),
             Row(
               children: <Widget> [
-                Column(),
-                Column(),
+                Column(
+                  children: [],
+                ),
+                Column(
+                  children: [],
+                ),
               ],
             ),
           ],

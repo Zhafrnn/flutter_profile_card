@@ -18,20 +18,41 @@ class Profilecard extends StatelessWidget {
         child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Ucup Guerero', 
-            style: TextStyle(fontSize: 20, 
-            fontWeight: FontWeight.bold,
+            Container(
+              width: MediaQuery.of(context).size.width * 0.8,
+              height: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.amber,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.redAccent,
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3),
+                  )
+                ]
+              ),
+              child: Text(
+                'Ucup Guerero', 
+              style: TextStyle(fontSize: 20, 
+              fontWeight: FontWeight.bold,
+              ),
+              ),
             ),
-            ),
-            Row(
-              children: <Widget> [
-                Column(
-                  children: [],
-                ),
-                Column(
-                  children: [],
+            Column(
+              children: [
+                Text(
+                  '',
+                  style: TextStyle( 
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
+            ),
+            Column(
+              children: [],
             ),
           ],
         ),

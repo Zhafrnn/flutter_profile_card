@@ -33,12 +33,14 @@ class Profilecard extends StatelessWidget {
                   )
                 ]
               ),
+
               child: Text(
                 'Ucup Guerero', 
               style: TextStyle(fontSize: 20, 
               fontWeight: FontWeight.bold,
               ),
               ),
+              
             ),
             Column(
               children: [

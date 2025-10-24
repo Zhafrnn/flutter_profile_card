@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/profile.dart';
+import 'package:flutter_application_1/aboutme.dart';
 
 void main() {
   runApp(MainPage());
@@ -11,7 +11,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Profilecard(),
+      home: AboutMe(),
       debugShowCheckedModeBanner: false,
     );
   }

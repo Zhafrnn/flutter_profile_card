@@ -1,13 +1,33 @@
-
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
 
   final List<String> BadgeList = const <String>[
-    Link(//id.pinterest.com/pin/33847434695446599/),
+    '🗿',
+    '🚀',
+    '🏠',
+    '👍',
+    '🚢',
+    '🔥',
+    '🛠️',
+    '😎',
+    '🐳',
+    '🦾',
+  ];
+
+  final List<String> ImageList = const <String>[
+    'https://plus.unsplash.com/premium_photo-1761426425340-6f17e0f23b15?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=900',
+    'https://images.unsplash.com/photo-1761481777279-f85121d6d1a1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=900',
+    'https://images.unsplash.com/photo-1761512273495-e79e2d5312ed?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDN8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=900',
+    'https://images.unsplash.com/photo-1761512273495-e79e2d5312ed?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDN8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=900',
+    'https://images.unsplash.com/photo-1761557056181-f14630aa16ac?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDV8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=60&w=900',
+    '',
+    '',
+    '',
+    '',
+    '',
   ];
 
   @override
@@ -293,18 +313,19 @@ class AboutMe extends StatelessWidget {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.cyanAccent,
+                  color: Colors.black,
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10.0),
                   child: Text(
-                    'Badges',
+                    'BADGES',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                       letterSpacing: 5,
+                      color: Colors.white,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -313,27 +334,78 @@ class AboutMe extends StatelessWidget {
               SizedBox(
                 height: 110,
                 child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: BadgeList.map((e) {
+                  scrollDirection: Axis.horizontal,
+                  children: BadgeList.map((e) {
                     return Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
                         width: 100,
                         height: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                        ),
+                        decoration: BoxDecoration(color: Colors.red),
                         child: Center(
-                          child: Text(
-                            '${e}',
-                            style: TextStyle(
-                              fontSize: 50,
-                            ),
-                          ),
+                          child: Text(e, style: TextStyle(fontSize: 50)),
                         ),
                       ),
                     );
                   }).toList(),
+                ),
+              ),
+              SizedBox(height: 15),
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text(
+                    'IMAGE',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      letterSpacing: 5,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 110,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: ImageList.map((a) {
+                    return Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        width: 100,
+                        height: 100,
+                        decoration: BoxDecoration(color: Colors.blue),
+                        child: Center(child: Image.network(a)),
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
+              SizedBox(height: 15),
+              SizedBox(
+                height: 110,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: ImageList.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          '${ImageList[index]}'
+                        ),
+                        radius: 50,
+                      ),
+                    );
+                  },
                 ),
               ),
             ],

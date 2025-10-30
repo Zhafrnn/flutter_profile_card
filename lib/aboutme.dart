@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_application_1/detail_profile.dart';
 
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
@@ -188,6 +189,31 @@ class AboutMe extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DetailProfile()),
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Detail Profile'.toUpperCase(),
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ),
               ),
               Container(
                 width: double.infinity,
@@ -399,9 +425,7 @@ class AboutMe extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: CircleAvatar(
-                        backgroundImage: NetworkImage(
-                          '${ImageList[index]}'
-                        ),
+                        backgroundImage: NetworkImage(ImageList[index]),
                         radius: 50,
                       ),
                     );

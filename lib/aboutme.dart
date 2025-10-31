@@ -31,6 +31,8 @@ class AboutMe extends StatelessWidget {
     '',
   ];
 
+  final title = 'Haydar Zhafran';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,12 +47,12 @@ class AboutMe extends StatelessWidget {
             children: <Widget>[
               CircleAvatar(
                 radius: 50,
-                backgroundImage: NetworkImage('assets/trains.jpeg'),
+                backgroundImage: NetworkImage('assets/Sticker.jpg'),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Text(
-                  'Haydar Zhafran'.toUpperCase(),
+                  title.toUpperCase(),
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -215,6 +217,26 @@ class AboutMe extends StatelessWidget {
                   ),
                 ),
               ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => DetailProfile(title: title,),
+                    ),
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('Detail Profile'.toUpperCase()),
+                  ),
+                ),
+              ),
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -236,6 +258,7 @@ class AboutMe extends StatelessWidget {
                   ),
                 ),
               ),
+
               SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
